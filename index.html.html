@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root {
+    --blu-unimi: #003366;
+    --blu-chiaro: #0055A4;
+    --rosso-diss: #C8102E;
+    --grigio-bg: #f4f6f9;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: var(--grigio-bg);
+}
+
+/* HEADER BIANCO */
+header {
+    background-color: white;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+header img {
+    height: 55px;
+    margin-right: 25px;
+}
+
+header h1 {
+    color: var(--blu-unimi);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* BOTTONI LATERALI */
+.floating-menu {
+    position: fixed;
+    top: 140px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu-item {
+    text-align: center;
+    font-size: 13px;
+    color: var(--blu-unimi);
+    font-weight: 500;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.circle-btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+    margin-bottom: 8px;
+}
+
+.circle-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* CONTENUTO */
+.content {
+    margin-left: 140px;
+    padding: 40px;
+}
+
+/* CARD */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+    align-items: stretch;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    border-top: 4px solid var(--rosso-diss);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--blu-unimi);
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--blu-chiaro);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.card a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--rosso-diss);
+    transition: width 0.25s ease;
+}
+
+.card a:hover {
+    color: var(--blu-unimi);
+}
+
+.card a:hover::after {
+    width: 100%;
+}
+
+/* CALENDARIO */
+.calendar-container {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo_unimi.png" alt="Logo UNIMI">
+    <img src="logo_diss.png" alt="Logo DiSS">
+    <h1>Laboratorio di Biologia e Genetica - Blocco C - Piano 6</h1>
+</header>
+
+<!-- MENU LATERALE TONDO -->
+<div class="floating-menu">
+
+    <div class="menu-item">
+        <a href="https://outlook.office.com" target="_blank">
+            <div class="circle-btn">
+                <img src="https://img.icons8.com/color/48/microsoft-outlook-2019.png" width="30">
+            </div>
+            Outlook
+        </a>
+    </div>
+
+    <div class="menu-item">
+        <a href="https://onedrive.live.com" target="_blank">
+            <div class="circle-btn">
+                <img src="https://img.icons8.com/color/48/microsoft-onedrive-2019.png" width="30">
+            </div>
+            OneDrive
+        </a>
+    </div>
+
+    <div class="menu-item">
+        <a href="https://www.unimi.it/it/chi-e-dove" target="_blank">
+            <div class="circle-btn">
+                <img src="https://img.icons8.com/fluency/48/search.png" width="30">
+            </div>
+            Chi e Dove
+        </a>
+    </div>
+
+    <div class="menu-item">
+        <a href="https://unimi2013-my.sharepoint.com/:f:/g/personal/paolo_grazioli_unimi_it/IgAxP4j2JX5eR6o9yFyavqt7AWcEFEpILJtOhFRivBkV12I?e=rTcV4Q" target="_blank">
+            <div class="circle-btn">
+                <img src="https://img.icons8.com/fluency/48/archive.png" width="30">
+            </div>
+            Lab Archive
+        </a>
+    </div>
+
+</div>
+
+<div class="content">
+
+<div class="card-grid">
+
+    <!-- MATERIALE -->
+    <div class="card">
+        <h3>Materiale</h3>
+
+        <p style="display:flex; align-items:center; gap:8px;">
+            <img src="https://img.icons8.com/color/24/microsoft-excel-2019.png" width="18">
+            <a href="https://unimi2013-my.sharepoint.com/:x:/g/personal/paolo_grazioli_unimi_it/IQA6rYemnJBZQbL6NcjQrhhJARbYV_LWn31YcPdJUcPKudU?e=TXyAgs" target="_blank">
+                Inventario dei prodotti
+            </a>
+        </p>
+
+        <p style="display:flex; align-items:center; gap:8px;">
+            <img src="https://img.icons8.com/color/24/microsoft-excel-2019.png" width="18">
+            Posizione del materiale
+        </p>
+    </div>
+
+    <!-- CALENDARIO -->
+    <div class="card">
+        <h3>Calendario</h3>
+
+        <p style="display:flex; align-items:center; gap:8px;">
+            <img src="https://img.icons8.com/color/24/microsoft-excel-2019.png" width="18">
+            <a href="https://unimi2013-my.sharepoint.com/:x:/g/personal/paolo_grazioli_unimi_it/IQA_gJB-EAWIQLsLLrIVTXLuATymEpM54lbVr9z6JCDQcXQ?e=HeXTzU" target="_blank">
+                Presenze 2026
+            </a>
+        </p>
+
+        <p style="display:flex; align-items:center; gap:8px;">
+            <img src="https://img.icons8.com/color/24/microsoft-excel-2019.png" width="18">
+            <a href="https://unimi2013-my.sharepoint.com/:x:/g/personal/paolo_grazioli_unimi_it/IQD3mGRCCrJnTbtd80c41gbzAVNJYthmpzuSFczUibKi9D0?e=u6IIuT" target="_blank">
+                Calendari strumenti dipartimentali
+            </a>
+        </p>
+
+        <p style="display:flex; align-items:center; gap:8px;">
+            <img src="https://img.icons8.com/color/24/pdf.png" width="18">
+            <a href="https://unimi2013-my.sharepoint.com/:b:/g/personal/paolo_grazioli_unimi_it/IQAi4J-OKB69R56vSukaJi0XAQ73NiiPKJnmSP8Cypwe1lA?e=p51CNu" target="_blank">
+                Istruzioni per calendari strumenti dipartimentali
+            </a>
+        </p>
+    </div>
+
+    <!-- ACQUISTI -->
+    <div class="card">
+        <h3>Acquisti</h3>
+
+        <p style="display:flex; align-items:center; gap:8px;">
+            <img src="https://img.icons8.com/color/24/folder-invoices.png" width="18">
+            <a href="https://unimi2013-my.sharepoint.com/:f:/g/personal/paolo_grazioli_unimi_it/IgBtfGZy07njQIgeVwEd8j1pAbl8-g94gs2GQfrmk0F8kdk?e=qWQuFs" target="_blank">
+	    Offerte Dipartimentali 2026
+        </p>
+    </div>
+
+</div>
+
+
+
+<!-- CALENDARIO -->
+
+    <h2 style="color: var(--blu-unimi);">Calendario Laboratorio Biologia e Genetica</h2>
+
+    <div class="calendar-container">
+        <iframe src="https://outlook.office365.com/owa/calendar/aeb998beba774664b5c5a24579aabbb6@unimi.it/3cd87a83cb2549c7b096ea3667a1ba172356338879699802122/calendar.html"></iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
